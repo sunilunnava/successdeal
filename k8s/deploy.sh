@@ -86,6 +86,9 @@ log "================================================================"
 
 # configmap
 ${KUBECTL} apply   ${KUBECTL_OPTS}  ${KUBECTL_OPTS} -f ${SCRIPT_DIR}/${PREFIX}-cfgmap.yml
+log "****************************************************************"
+log ${KUBECTL} apply   ${KUBECTL_OPTS}  ${KUBECTL_OPTS} -f ${SCRIPT_DIR}/${PREFIX}-cfgmap.yml
+log "****************************************************************"
 
 # svc
 ${KUBECTL} apply \
