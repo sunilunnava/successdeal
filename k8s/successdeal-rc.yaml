@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: successdeal
+  namespace: com-att-ocnp-mgmt
+spec:
+  replicas: 1
+  selector:
+    app: successdeal
+  template:
+    metadata:
+      labels:
+        app: successdeal
+    spec:
+      serviceAccount: YOUR
+      containers:
+      - name: successdeal
+        image: ${docker-registry}/${docker-namespace}/successdeal:latest
+        imagePullPolicy: Always
+        ports:
+         - containerPort: 8080
